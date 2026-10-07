@@ -99,7 +99,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .phone-side-right{right:0px;bottom:10px;transform:rotate(6deg) translateZ(-40px);z-index:1}
 .phone-label{position:absolute;right:50px;bottom:0;transform:translateY(32px);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cbb5af;font-weight:600}
 
-/* Hero Floating Glass Badges (Spec 2) */
+/* Hero Floating Glass Badges */
 .glass-badge{position:absolute;z-index:8;padding:10px 16px;border-radius:18px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);box-shadow:0 15px 35px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;color:#fff;pointer-events:none}
 .gb-top{top:30px;left:-40px;animation:floatCard 4s ease-in-out infinite}
 .gb-bottom{bottom:80px;right:-10px;animation:floatCard 4.6s ease-in-out infinite 1s}
@@ -110,46 +110,46 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 @media(max-width:650px){.phone-stage{width:260px;right:-100px;bottom:1vh;transform:scale(.78);transform-origin:bottom right}}
 
 /* ==========================================================================
-   'How It Works': Sticky Bento Grid with Sequential Glow (Spec 3)
+   'How It Works': Unified Bento Workflow + Live Simulator Engine
    ========================================================================== */
 .bento-section{max-width:var(--max);margin:0 auto;padding:100px 28px 70px}
-.bento-header-split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:flex-end;margin-bottom:50px}
+.bento-header-split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:flex-end;margin-bottom:45px}
 .bento-header-split .eyebrow{color:#d79b86;font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:12px;font-weight:800}
 .bento-header-split h2{font-size:clamp(38px,4.8vw,68px);letter-spacing:-.055em;line-height:.95;margin:0}
 .bento-header-split p{color:var(--muted);font-size:16px;line-height:1.75;margin:0}
 
-/* 5 Bento Cards Row */
-.bento-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:30px}
-.bento-card{position:relative;height:380px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.1);overflow:hidden;padding:26px 20px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .4s var(--ease-quart),border-color .6s var(--ease-quart),box-shadow .6s var(--ease-quart)}
-.bento-card:hover{transform:translateY(-6px);border-color:rgba(255,77,109,.4)}
+/* 5 Bento Step Cards */
+.bento-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:25px}
+.bento-card{position:relative;height:250px;border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.1);overflow:hidden;padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .4s var(--ease-quart),border-color .5s var(--ease-quart),box-shadow .5s var(--ease-quart)}
+.bento-card:hover{transform:translateY(-5px);border-color:rgba(255,77,109,.4);background:rgba(255,255,255,.07)}
 
-/* Sequential Glow Effect (Spec 3: Electric Violet / Berry Rose) */
-.bento-card.active{border-color:rgba(139,92,246,.7);box-shadow:0 0 35px rgba(139,92,246,.35),0 0 15px rgba(255,77,109,.2);transform:translateY(-8px)}
-.bento-num{font-size:32px;font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.25);transition:color .4s}
+/* Sequential Glow Effect */
+.bento-card.active{border-color:rgba(139,92,246,.75);box-shadow:0 0 35px rgba(139,92,246,.35),0 0 15px rgba(255,77,109,.2);transform:translateY(-7px);background:linear-gradient(180deg,rgba(139,92,246,.12),rgba(255,77,109,.05))}
+.bento-num{font-size:28px;font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.25);transition:color .4s}
 .bento-card.active .bento-num{color:#ff4d6d}
-.bento-card h4{font-size:19px;margin:12px 0 6px;line-height:1.15;color:#fff}
-.bento-card p{font-size:12px;color:#c0aea7;line-height:1.55;margin:0}
+.bento-card h4{font-size:18px;margin:8px 0 4px;line-height:1.2;color:#fff}
+.bento-card p{font-size:12px;color:#c0aea7;line-height:1.45;margin:0}
 
-/* Wave graphic texture inside each card (Matching Video Frame 00:02) */
-.bento-wave{position:absolute;left:-20%;right:-20%;bottom:-10px;height:140px;pointer-events:none;opacity:.45;transition:opacity .5s}
-.bento-card.active .bento-wave{opacity:.9}
+/* Wave graphic texture inside each card */
+.bento-wave{position:absolute;left:-20%;right:-20%;bottom:-10px;height:120px;pointer-events:none;opacity:.45;transition:opacity .5s}
+.bento-card.active .bento-wave{opacity:.95}
 .bento-wave svg{width:100%;height:100%}
 
-/* 5 Indicator Dots */
-.bento-dots{display:flex;justify-content:center;gap:8px;margin:20px 0 60px}
+/* Bento 5 Indicator Dots */
+.bento-dots{display:flex;justify-content:center;gap:8px;margin:15px 0 45px}
 .bento-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:.3s;cursor:pointer}
 .bento-dot.active{background:#ff4d6d;width:24px;border-radius:999px;box-shadow:0 0 10px #ff4d6d}
-@media(max-width:1000px){.bento-grid{grid-template-columns:repeat(2,1fr)}.bento-card{height:300px}}
-@media(max-width:600px){.bento-grid{grid-template-columns:1fr}.bento-header-split{grid-template-columns:1fr;gap:20px}}
+@media(max-width:1050px){.bento-grid{grid-template-columns:repeat(3,1fr);gap:12px}.bento-card{height:220px}}
+@media(max-width:650px){.bento-grid{grid-template-columns:1fr 1fr}.bento-header-split{grid-template-columns:1fr;gap:20px}}
 
 /* ==========================================================================
-   Simulator Playground Engine (Interactive Demo)
+   Simulator Playground Engine (Synchronized with Bento Steps)
    ========================================================================== */
-.sim-stage{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:40px;padding:55px 50px;position:relative;overflow:hidden;margin-bottom:60px}
+.sim-stage{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:40px;padding:50px 48px;position:relative;overflow:hidden;margin-bottom:60px}
 .sim-stage:before{content:"";position:absolute;width:450px;height:450px;border-radius:50%;right:-80px;top:-80px;background:radial-gradient(circle,rgba(255,77,109,.15),transparent 65%);pointer-events:none}
-.sim-info-pane{max-width:480px}
+.sim-info-pane{max-width:500px}
 .sim-badge{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border-radius:999px;background:rgba(255,77,109,.12);border:1px solid rgba(255,77,109,.3);color:#ff7a91;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-.sim-info-pane h3{font-size:36px;letter-spacing:-.04em;line-height:1.1;margin:0 0 16px}
+.sim-info-pane h3{font-size:35px;letter-spacing:-.04em;line-height:1.1;margin:0 0 16px}
 .sim-info-pane p{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 24px}
 .sim-feature-list{list-style:none;padding:0;margin:0 0 30px}
 .sim-feature-list li{display:flex;align-items:center;gap:12px;color:#f0dfd8;font-size:14px;padding:8px 0}
@@ -157,7 +157,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 
 /* The Live Simulator Phone */
 .sim-phone-wrap{display:flex;justify-content:center;perspective:1200px}
-.sim-phone{width:310px;height:610px;border:10px solid #201d1f;border-radius:52px;background:#050505;box-shadow:0 35px 90px rgba(0,0,0,.8),0 0 60px rgba(255,77,109,.18);position:relative;overflow:hidden;transform:rotateY(-5deg) rotateX(4deg);transition:transform .5s var(--ease-spring)}
+.sim-phone{width:315px;height:620px;border:10px solid #201d1f;border-radius:52px;background:#050505;box-shadow:0 35px 90px rgba(0,0,0,.8),0 0 60px rgba(255,77,109,.18);position:relative;overflow:hidden;transform:rotateY(-5deg) rotateX(4deg);transition:transform .5s var(--ease-spring)}
 .sim-phone:hover{transform:rotateY(0) rotateX(0) scale(1.02)}
 .sim-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:24px;border-radius:999px;background:#000;z-index:20;display:flex;align-items:center;justify-content:flex-end;padding-right:12px}
 .sim-notch:before{content:"";width:10px;height:10px;border-radius:50%;background:#09121a;box-shadow:0 0 0 2px #151d24}
@@ -166,17 +166,18 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .sim-screen-view.active{opacity:1;pointer-events:auto;transform:none}
 
 .sv-header{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d5b5ac;margin-bottom:4px}
-.sv-title{font-size:22px;font-weight:800;letter-spacing:-.04em;margin:0 0 16px}
-.sv-chips{display:flex;gap:7px;margin-bottom:18px;overflow-x:auto;padding-bottom:4px}
+.sv-title{font-size:22px;font-weight:800;letter-spacing:-.04em;margin:0 0 14px}
+.sv-chips{display:flex;gap:7px;margin-bottom:16px;overflow-x:auto;padding-bottom:4px}
 .sv-chip{padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);font-size:11px;background:rgba(255,255,255,.05);color:#eed8d0;cursor:pointer;white-space:nowrap;transition:.2s}
 .sv-chip.active{background:#fff;color:#18060a;font-weight:700;border-color:#fff}
-.sv-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:15px;margin-bottom:10px}
-.sv-card.selected{border-color:#ff5a72;background:rgba(255,77,109,.12)}
+.sv-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:14px;margin-bottom:10px;cursor:pointer;transition:.25s}
+.sv-card:hover{background:rgba(255,255,255,.12)}
+.sv-card.selected{border-color:#ff5a72;background:rgba(255,77,109,.15);box-shadow:0 0 20px rgba(255,77,109,.25)}
 .sv-card h5{margin:0 0 4px;font-size:15px}
 .sv-card .sv-price{font-size:20px;font-weight:800;color:#ff8397}
 .sv-card .sv-meta{font-size:11px;color:#d7c3bb;margin-top:4px}
 
-.creator-match-box{text-align:center;padding:18px 0}
+.creator-match-box{text-align:center;padding:16px 0}
 .creator-avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;border:3px solid #ff4d6d;box-shadow:0 0 25px rgba(255,77,109,.4);background:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80') center/cover;position:relative}
 .creator-avatar:after{content:"✓";position:absolute;right:2px;bottom:2px;width:24px;height:24px;background:#10b981;border-radius:50%;border:2px solid #000;color:#fff;font-size:12px;display:grid;place-items:center;font-weight:900}
 .creator-name{font-size:20px;font-weight:800;margin:0 0 4px}
@@ -198,12 +199,21 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .eta-card b{font-size:14px;color:#fff}
 .eta-card span{font-size:12px;color:#10b981;font-weight:700}
 
+/* Step 04: Mobile Editing Suite Preview */
+.edit-suite-box{flex:1;background:rgba(255,255,255,.05);border-radius:20px;border:1px solid rgba(255,255,255,.12);padding:16px;display:flex;flex-direction:column;justify-content:space-between;margin:10px 0}
+.edit-timeline{height:54px;background:rgba(0,0,0,.4);border-radius:12px;padding:8px;display:flex;align-items:center;gap:3px;overflow:hidden;position:relative}
+.waveform-bar{width:4px;border-radius:999px;background:#ff4d6d;animation:waveformPulse 1s ease-in-out infinite alternate}
+.edit-grade-toggle{display:flex;gap:8px;background:rgba(0,0,0,.5);border-radius:10px;padding:4px;margin-top:10px}
+.grade-btn{flex:1;padding:6px;font-size:10px;font-weight:700;border-radius:8px;border:0;background:transparent;color:#bca9a2;cursor:pointer}
+.grade-btn.active{background:#ff4d6d;color:#fff}
+
 .delivered-reel-preview{flex:1;border-radius:22px;background:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80') center/cover;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;box-shadow:inset 0 -80px 70px rgba(0,0,0,.9)}
 .delivered-toast{position:absolute;top:12px;left:10px;right:10px;background:rgba(20,5,8,.9);border:1px solid rgba(255,77,109,.5);border-radius:14px;padding:8px 12px;display:flex;align-items:center;gap:10px;font-size:11px;backdrop-filter:blur(10px)}
 .reel-play-btn{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.9);color:#1b080b;display:grid;place-items:center;font-size:18px;margin:auto auto 15px;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:pointer;transition:.25s}
 .reel-play-btn:hover{transform:scale(1.12)}
 .reel-ready-text h5{margin:0 0 3px;font-size:16px}
 .reel-ready-text p{margin:0;font-size:11px;color:#e1cfc9}
+@keyframes waveformPulse{0%{height:8px}100%{height:36px}}
 @media(max-width:900px){.sim-stage{grid-template-columns:1fr;padding:35px 24px}}
 
 /* ==========================================================================
@@ -252,7 +262,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .reel-modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:20px;cursor:pointer;display:grid;place-items:center;z-index:10}
 .reel-modal-overlay{position:absolute;left:20px;right:20px;bottom:25px;z-index:5}
 .reel-modal-overlay h3{margin:0 0 6px;font-size:24px}
-.reel-modal-overlay p{margin:0;font-size:14px;color:#dcc6bd}
+.reel-modal-overlay p{margin:0 0 16px;font-size:14px;color:#dcc6bd}
 
 /* ==========================================================================
    Pricing Section (Matching Video Frame 00:05)
@@ -316,7 +326,11 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .booking{position:relative;overflow:hidden;background:#f7eee7;color:#240a0d;border-radius:36px;padding:70px;margin-top:30px}
 .booking:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-170px;top:-200px;background:radial-gradient(circle,#ff7a91,transparent 65%);opacity:.35}
 .booking h2{max-width:700px}.booking p{max-width:540px;color:#654e4a;line-height:1.7}
-.form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:800px;margin-top:30px}
+
+.form-alert{display:none;background:rgba(255,77,109,.15);border:1px solid #ff4d6d;border-radius:12px;padding:12px 16px;color:#93172e;font-size:14px;font-weight:700;margin-top:20px}
+.form-alert.active{display:block;animation:rise .4s both}
+
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:800px;margin-top:24px}
 .field{padding:16px 18px;border-radius:14px;border:1px solid #ddccc4;background:rgba(255,255,255,.75);outline:0;transition:.25s}
 .field:focus{border-color:#a92d4d;background:#fff;box-shadow:0 0 0 4px rgba(185,30,70,.12)}
 .form .full{grid-column:1/-1}
@@ -355,11 +369,12 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 .big-kannada{position:absolute;left:1vw;right:1vw;bottom:-30px;text-align:center;font-family:"Noto Sans Kannada","Nirmala UI",sans-serif;font-size:clamp(90px,17vw,250px);font-weight:800;letter-spacing:-.08em;color:rgba(255,90,114,.12);white-space:nowrap;line-height:.8;pointer-events:none}
 .footer-bottom{max-width:1250px;margin:60px auto 0;display:flex;justify-content:space-between;color:rgba(255,255,255,.4);font-size:12px;position:relative;z-index:3}
 
-/* Floating Action Bar */
-.floating{position:fixed;left:25px;bottom:25px;z-index:80;display:flex;flex-direction:column;gap:10px}
-.float-btn{border:0;border-radius:999px;padding:14px 22px;font-weight:700;cursor:pointer;box-shadow:0 12px 35px rgba(0,0,0,.35);transition:.3s var(--ease-spring)}
-.float-btn.black{background:#090909;color:#fff;border:1px solid rgba(255,255,255,.15)}.float-btn.black:hover{background:#ff4d6d;border-color:#ff4d6d}
-.float-btn.light{background:#fff;color:#3b160d}.float-btn.light:hover{background:#f3e3dc}
+/* Floating Action Bar - Anchored cleanly in bottom-right (No overlapping left content) */
+.floating{position:fixed;right:28px;bottom:28px;z-index:85;display:flex;align-items:center;gap:10px;background:rgba(18,6,9,.82);padding:6px;border-radius:999px;border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(20px);box-shadow:0 15px 45px rgba(0,0,0,.55);transition:transform .3s var(--ease-spring)}
+.float-btn{border:0;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;font-size:13px;transition:.3s var(--ease-spring)}
+.float-btn.black{background:#fff;color:#18060a}.float-btn.black:hover{background:#ff4d6d;color:#fff}
+.float-btn.light{background:transparent;color:#f0dfd8;border:1px solid rgba(255,255,255,.15)}.float-btn.light:hover{background:rgba(255,255,255,.1)}
+@media(max-width:650px){.floating{right:12px;bottom:14px;padding:4px}.float-btn{padding:10px 14px;font-size:11px}}
 
 /* Keyframes */
 @keyframes rise{to{opacity:1;transform:none}from{opacity:0;transform:translateY(20px)}}
@@ -436,7 +451,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 </header>
 
 <!-- ==========================================================================
-     'How It Works': Sticky Bento Grid with Sequential Glow (Spec 3)
+     'How It Works': Unified Bento Grid with Synchronized Live Phone Simulator (Spec 3)
      ========================================================================== -->
 <section class="bento-section" id="how-it-works">
   <!-- Header matching Video Frame 00:02 -->
@@ -447,7 +462,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
     </div>
     <div>
       <p style="font-size:18px;font-weight:700;color:#fff;margin-bottom:8px">How Reeload Works</p>
-      <p>Reel-Maker works seamlessly in capturing your celebration's best moments. Our trained creators arrive with pro gear, capturing cinematic raw footage and delivering social-ready reels on the same day.</p>
+      <p>Reel-Maker works seamlessly in capturing your celebration's best moments. Click any card below to experience the step-by-step phone walkthrough.</p>
     </div>
   </div>
 
@@ -542,18 +557,18 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
     <div class="bento-dot" onclick="selectBento(4)"></div>
   </div>
 
-  <!-- Interactive 4-Step Simulator Engine Playground -->
-  <div class="sim-stage">
+  <!-- Interactive 5-Step Unified Simulator Stage -->
+  <div class="sim-stage" id="simulatorStage">
     <div class="sim-info-pane">
-      <div class="sim-badge" id="simBadge">Step 1 of 4</div>
-      <h3 id="simTitle">Tell us about your event. We handle the rest.</h3>
+      <div class="sim-badge" id="simBadge">Step 1 of 5 · Book Instantly</div>
+      <h3 id="simTitle">Select your event format and pick your hours.</h3>
       <p id="simDesc">Choose between Hourly shoots, Half-Day event packages, or our bespoke Reeload Select experience. Zero equipment stress — creators arrive fully equipped.</p>
       <ul class="sim-feature-list" id="simFeatures">
         <li><span>✓</span> Latest Apple iPhone 17 Pro & 4K ProRes capture</li>
         <li><span>✓</span> Professional 3-axis DJI mobile gimbal stabilization</li>
-        <li><span>✓</span> Verified and trained social-first storytelling creators</li>
+        <li><span>✓</span> Instant upfront pricing with no hidden charges</li>
       </ul>
-      <a class="btn primary" href="#book">Book This Creator Flow ↗</a>
+      <button class="btn primary" id="simBookCta" onclick="bookCurrentPlan()">Lock in Selection & Pick Date ↗</button>
     </div>
 
     <div class="sim-phone-wrap">
@@ -563,30 +578,30 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
           
           <!-- View 0: Select Event & Plan -->
           <div class="sim-screen-view active" id="view0">
-            <div class="sv-header">Reeload Booking</div>
+            <div class="sv-header">Step 01 · Booking Engine</div>
             <div class="sv-title">Select Event</div>
             <div class="sv-chips">
-              <span class="sv-chip active" onclick="setChip(this)">Wedding</span>
-              <span class="sv-chip" onclick="setChip(this)">Reception</span>
-              <span class="sv-chip" onclick="setChip(this)">Engagement</span>
-              <span class="sv-chip" onclick="setChip(this)">Party</span>
+              <span class="sv-chip active" onclick="setChip(this, 'Wedding')">Wedding</span>
+              <span class="sv-chip" onclick="setChip(this, 'Reception')">Reception</span>
+              <span class="sv-chip" onclick="setChip(this, 'Engagement')">Engagement</span>
+              <span class="sv-chip" onclick="setChip(this, 'Birthday Celebration')">Party</span>
             </div>
-            <div class="sv-card selected">
+            <div class="sv-card selected" onclick="setPhonePackage(this, 'Half Day Plan', 6249)">
               <h5>Half Day Coverage</h5>
               <div class="sv-price">₹6,249 <small>+ GST</small></div>
               <div class="sv-meta">Up to 3 hours · 2 Reels · Raw footage included</div>
             </div>
-            <div class="sv-card">
+            <div class="sv-card" onclick="setPhonePackage(this, 'Hourly Plan', 2499)">
               <h5>Hourly Plan</h5>
               <div class="sv-price">₹2,499 <small>+ GST</small></div>
               <div class="sv-meta">1 hour shoot · 1 edited reel</div>
             </div>
-            <button class="btn primary" style="width:100%;margin-top:auto;padding:12px;font-size:13px" onclick="setSimStep(1)">Find Reel Maker →</button>
+            <button class="btn primary" style="width:100%;margin-top:auto;padding:12px;font-size:13px" onclick="selectBento(1)">Next: Creator Match →</button>
           </div>
 
           <!-- View 1: Creator Matched Profile -->
           <div class="sim-screen-view" id="view1">
-            <div class="sv-header">Creator Assigned</div>
+            <div class="sv-header">Step 02 · Creator Assigned</div>
             <div class="sv-title" style="margin-bottom:8px">Matched in 42s</div>
             <div class="creator-match-box">
               <div class="creator-avatar"></div>
@@ -599,12 +614,12 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
               </div>
               <div class="gear-badge">🎥 iPhone 17 Pro Max + DJI Osmo 6</div>
             </div>
-            <button class="btn primary" style="width:100%;margin-top:auto;padding:12px;font-size:13px" onclick="setSimStep(2)">Track Creator →</button>
+            <button class="btn primary" style="width:100%;margin-top:auto;padding:12px;font-size:13px" onclick="selectBento(2)">Next: Live GPS Track →</button>
           </div>
 
-          <!-- View 2: Live Bangalore Map Tracker -->
+          <!-- View 2: Live Bangalore Map Tracker & Arrival -->
           <div class="sim-screen-view" id="view2">
-            <div class="sv-header">Live En Route</div>
+            <div class="sv-header">Step 03 · Pro Shoot & Arrival</div>
             <div class="sv-title" style="margin-bottom:8px">Bengaluru · Indiranagar</div>
             <div class="sim-map-wrap">
               <svg class="sim-map-svg" viewBox="0 0 260 220">
@@ -616,26 +631,59 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
               <div class="creator-pin p-creator"></div>
             </div>
             <div class="eta-card">
-              <div><b>Priya is en route</b><div style="font-size:11px;color:#d8c5bf">Arriving with full kit</div></div>
-              <span>ETA 14 min</span>
+              <div><b>Priya arrived on site</b><div style="font-size:11px;color:#d8c5bf">Lighting & Audio check complete</div></div>
+              <span>READY</span>
             </div>
-            <button class="btn primary" style="width:100%;margin-top:10px;padding:12px;font-size:13px" onclick="setSimStep(3)">Preview Reel Drop →</button>
+            <button class="btn primary" style="width:100%;margin-top:10px;padding:12px;font-size:13px" onclick="selectBento(3)">Next: Rapid Editing →</button>
           </div>
 
-          <!-- View 3: 24h Reel Delivery Preview -->
+          <!-- View 3: Edit Fast Mobile Suite Preview -->
           <div class="sim-screen-view" id="view3">
+            <div class="sv-header">Step 04 · Post-Production</div>
+            <div class="sv-title" style="margin-bottom:8px">Social-First Grading</div>
+            <div class="edit-suite-box">
+              <div>
+                <div style="font-size:12px;color:#d8c5bf;margin-bottom:6px">Audio Beat-Sync Waveform</div>
+                <div class="edit-timeline">
+                  <div class="waveform-bar" style="animation-delay:0.1s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.3s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.5s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.2s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.4s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.6s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.2s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.5s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.1s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.4s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.7s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.3s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.5s"></div>
+                  <div class="waveform-bar" style="animation-delay:0.2s"></div>
+                </div>
+              </div>
+              <div class="edit-grade-toggle">
+                <button class="grade-btn" onclick="toggleGrade(this)">ProRes Log</button>
+                <button class="grade-btn active" onclick="toggleGrade(this)">Color Graded HDR</button>
+              </div>
+              <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:8px">✓ Color profile: Reeload Velvet LUT</div>
+            </div>
+            <button class="btn primary" style="width:100%;margin-top:auto;padding:12px;font-size:13px" onclick="selectBento(4)">Next: Reel Drop →</button>
+          </div>
+
+          <!-- View 4: Reeload & Share Drop -->
+          <div class="sim-screen-view" id="view4">
             <div class="delivered-toast">
               <span>🔔</span>
-              <div><b>Reel Ready to Share</b><div style="color:#d8c5bf">Color graded in 4K ProRes</div></div>
+              <div><b>Your 4K Reel is Ready!</b><div style="color:#d8c5bf">Delivered via WhatsApp & Drive</div></div>
             </div>
             <div class="delivered-reel-preview">
-              <div class="reel-play-btn" onclick="openLightbox('Wedding Highlights')">▶</div>
+              <div class="reel-play-btn" onclick="openLightbox('Wedding Story · The Vows')">▶</div>
               <div class="reel-ready-text">
                 <h5>The Royal Entrance</h5>
                 <p>Shot & edited by Priya S. for Reeload</p>
               </div>
             </div>
-            <button class="btn primary" style="width:100%;margin-top:12px;padding:12px;font-size:13px" onclick="setSimStep(0)">Restart Simulation ↺</button>
+            <button class="btn primary" style="width:100%;margin-top:12px;padding:12px;font-size:13px" onclick="bookCurrentPlan()">Book This Package Now ↗</button>
           </div>
 
         </div>
@@ -655,32 +703,32 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
 
   <div class="marquee-container" id="marqueeContainer">
     <div class="marquee-track" id="marqueeTrack">
-      <article class="marquee-card m1" onclick="openLightbox('Wedding Story · The Vows')">
+      <article class="marquee-card m1" onclick="openLightbox('Wedding Story · The Vows', 'Wedding')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>Wedding</span><h3>Traditions in motion</h3></div>
       </article>
-      <article class="marquee-card m2" onclick="openLightbox('Reception · Grand Entrance')">
+      <article class="marquee-card m2" onclick="openLightbox('Reception · Grand Entrance', 'Reception')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>Reception</span><h3>Every entrance matters</h3></div>
       </article>
-      <article class="marquee-card m3" onclick="openLightbox('Engagement · Before Forever')">
+      <article class="marquee-card m3" onclick="openLightbox('Engagement · Before Forever', 'Engagement')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>Engagement</span><h3>Before forever</h3></div>
       </article>
-      <article class="marquee-card m4" onclick="openLightbox('Celebration · Energy')">
+      <article class="marquee-card m4" onclick="openLightbox('Celebration · Energy', 'Birthday Celebration')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>Celebration</span><h3>People. Energy. Memories.</h3></div>
       </article>
-      <article class="marquee-card m5" onclick="openLightbox('South Indian Wedding')">
+      <article class="marquee-card m5" onclick="openLightbox('South Indian Wedding', 'Wedding')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>South Indian</span><h3>The details become the story</h3></div>
       </article>
-      <article class="marquee-card m6" onclick="openLightbox('Candid Moments')">
+      <article class="marquee-card m6" onclick="openLightbox('Candid Moments', 'Reception')">
         <div class="play-badge">▶</div>
         <div class="marquee-photo"></div>
         <div class="marquee-caption"><span>Candid</span><h3>Moments between moments</h3></div>
@@ -702,7 +750,8 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
     <div class="reel-modal-overlay">
       <span style="font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#ff8ea1;font-weight:700;display:inline-block;margin-bottom:8px">4K Vertical Reel</span>
       <h3 id="modalTitle">Wedding Story</h3>
-      <p id="modalDesc">Captured on iPhone 17 Pro with color-graded HDR. Delivered to client within 2 hours of event completion.</p>
+      <p id="modalDesc">Captured on iPhone 17 Pro with color-graded HDR. Delivered within 2 hours of event completion.</p>
+      <button class="btn primary" style="width:100%;padding:14px;font-size:13px;justify-content:center" onclick="bookFromModal()">Book Reel Maker For This Event ↗</button>
     </div>
   </div>
 </div>
@@ -736,7 +785,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
           <li>Shot on latest iPhones</li>
           <li>Reeload branding included</li>
         </ul>
-        <button class="select" onclick="book('Hourly Plan')">Select this plan</button>
+        <button class="select" onclick="bookPlan('Hourly Plan')">Select this plan</button>
       </article>
       
       <article class="package featured">
@@ -752,7 +801,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
           <li>Shot on latest iPhones</li>
           <li>Reeload branding included</li>
         </ul>
-        <button class="select" onclick="book('Half Day Plan')">Select this plan</button>
+        <button class="select" onclick="bookPlan('Half Day Plan')">Select this plan</button>
       </article>
       
       <article class="package">
@@ -764,7 +813,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
           <li>Same creator where available</li>
           <li>Fast delivery workflow</li>
         </ul>
-        <button class="select" onclick="book('Add On')">Select this plan</button>
+        <button class="select" onclick="bookPlan('Wedding Add-On')">Select this plan</button>
       </article>
     </div>
 
@@ -785,7 +834,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
             <li>Priority editing & fast drop</li>
             <li>Full 4K ProRes delivery</li>
           </ul>
-          <button class="select" onclick="book('Reeload Select')">Explore Select</button>
+          <button class="select" onclick="bookPlan('Reeload Select')">Explore Select</button>
         </article>
         
         <article class="package">
@@ -797,7 +846,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
             <li>Extra edited reels</li>
             <li>Additional creators on request</li>
           </ul>
-          <button class="select" onclick="book('Wedding Add-On')">Enquire</button>
+          <button class="select" onclick="bookPlan('Wedding Add-On')">Enquire</button>
         </article>
         
         <article class="package">
@@ -810,7 +859,7 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
             <li>Custom shot list</li>
             <li>Dedicated coordinator</li>
           </ul>
-          <button class="select" onclick="book('Custom Wedding')">Build My Plan</button>
+          <button class="select" onclick="bookPlan('Custom Wedding')">Build My Plan</button>
         </article>
       </div>
     </div>
@@ -878,25 +927,43 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
   </div>
 </section>
 
-<!-- Booking Form Section -->
+<!-- ==========================================================================
+     Booking Form Section (Directly Connected with Plans and Simulator)
+     ========================================================================== -->
 <section class="section" id="book">
   <div class="booking">
-    <div class="eyebrow">Let's create together</div>
+    <div class="eyebrow">Lock In Your Date</div>
     <h2>Turn your moments into reels people actually want to watch.</h2>
-    <p>Tell us about your event. We'll use the details to match you with the right Reel Maker package.</p>
+    <p>Tell us about your event. Your plan from above will automatically sync here.</p>
+    
+    <!-- Dynamic Selection Alert Toast -->
+    <div class="form-alert" id="formAlert">✓ Plan Selected: Half Day Plan (₹6,249). Choose your date below!</div>
+
     <form class="form" onsubmit="submitBooking(event)">
-      <input class="field" required placeholder="Your name">
-      <input class="field" required placeholder="Phone number (WhatsApp)">
-      <select class="field" required>
+      <input class="field" id="formName" required placeholder="Your name">
+      <input class="field" id="formPhone" required placeholder="Phone number (WhatsApp)">
+      
+      <select class="field" id="formEventType" required>
         <option value="">Event type</option>
-        <option>Wedding</option>
-        <option>Reception</option>
-        <option>Engagement</option>
-        <option>Birthday Celebration</option>
-        <option>Corporate / Brand Event</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Reception">Reception</option>
+        <option value="Engagement">Engagement</option>
+        <option value="Birthday Celebration">Birthday Celebration</option>
+        <option value="Corporate / Brand Event">Corporate / Brand Event</option>
       </select>
-      <input class="field" type="date" required>
-      <input class="field full" required placeholder="Event location (e.g. Palace Grounds, Indiranagar, etc.)">
+
+      <select class="field" id="formPackage" required>
+        <option value="">Select Package</option>
+        <option value="Hourly Plan">Hourly Plan (₹2,499)</option>
+        <option value="Half Day Plan" selected>Half Day Plan (₹6,249)</option>
+        <option value="Reeload Select">Reeload Select (₹19,999)</option>
+        <option value="Wedding Add-On">Wedding Add-On</option>
+        <option value="Custom Wedding">Custom Wedding Production</option>
+      </select>
+
+      <input class="field" id="formDate" type="date" required>
+      <input class="field" id="formTime" type="time">
+      <input class="field full" id="formLocation" required placeholder="Event location (e.g. Taj West End, Palace Grounds, Indiranagar, etc.)">
       <button class="submit" type="submit" id="submitBtn">Book My Reel Maker →</button>
     </form>
   </div>
@@ -954,22 +1021,22 @@ linear-gradient(120deg,#070204,#160509 55%,#080204)}
   <div class="big-kannada">ರೀಲೋಡ್</div>
 </footer>
 
-<!-- Floating Action Bar -->
+<!-- Floating Action Bar - Anchored at Bottom-Right (Clear of all cards & content) -->
 <div class="floating">
-  <button class="float-btn black" onclick="location.hash='book'">Book a Reel Maker ↗</button>
+  <button class="float-btn black" onclick="location.hash='book'">Book Reel Maker ↗</button>
   <button class="float-btn light" onclick="alert('Creator recruitment portal opening soon. Contact connect@reeload.com')">Become a Creator</button>
 </div>
 
 <!-- ==========================================================================
-     JavaScript Engine: Lenis, 3D Scroll Binding, Center-Focal Gallery, Bento
+     JavaScript Engine: Connected Navigation, State Sync, Center-Focal Marquee
      ========================================================================== -->
 <script>
-// 1. Global Motion Foundation: Lenis with Quart-Out Easing (Spec 1)
+// 1. Lenis Smooth Scroll Engine
 let lenis;
 if (typeof Lenis !== 'undefined') {
   lenis = new Lenis({
     duration: 1.25,
-    easing: (t) => 1 - Math.pow(1 - t, 4), // Quart-out easing
+    easing: (t) => 1 - Math.pow(1 - t, 4),
     orientation: 'vertical',
     smoothWheel: true,
   });
@@ -1009,19 +1076,15 @@ const phoneRight = document.getElementById('phoneRight');
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const heroHeight = window.innerHeight;
-  // Progress from 0 to 0.2 (0% to 20% scroll)
   const progress = Math.min(1, Math.max(0, scrollY / (heroHeight * 0.2)));
   
   if (phoneContainer && phoneCenter && phoneLeft && phoneRight) {
-    // Start at -15deg, moves to 0deg as you scroll down
     const rotY = -15 + (progress * 15);
     phoneContainer.style.transform = `rotateY(${rotY}deg) translateZ(${progress * 40}px)`;
 
-    // Center phone scales 1.1x at progress 1
     const centerScale = 1 + (progress * 0.1);
     phoneCenter.style.transform = `translateZ(${10 + progress * 50}px) scale(${centerScale})`;
 
-    // Side phones drift outward by 40px and fade to opacity 0.5
     const drift = progress * 40;
     const sideOpacity = 1 - (progress * 0.5);
     phoneLeft.style.transform = `translateX(${-drift}px) rotate(-6deg) translateZ(${-30 - progress * 20}px)`;
@@ -1031,7 +1094,6 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Mouse Gyroscope Parallax on Hero Phone Stage
 const phoneStage = document.getElementById('phoneStage');
 window.addEventListener('mousemove', (e) => {
   if (!phoneStage || window.innerWidth < 900) return;
@@ -1040,45 +1102,21 @@ window.addEventListener('mousemove', (e) => {
   phoneStage.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 6}deg)`;
 });
 
-// 5. 'How It Works': Bento Grid Sequential Glow (Spec 3)
-const bentoCards = document.querySelectorAll('.bento-card');
-const bentoDots = document.querySelectorAll('.bento-dot');
-let activeBentoIndex = 0;
-
-function selectBento(idx) {
-  activeBentoIndex = idx;
-  bentoCards.forEach((c, i) => c.classList.toggle('active', i === idx));
-  bentoDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-  // Sync the interactive simulator stage as well
-  if (idx < 4) setSimStep(idx);
-}
-
-// Auto-advance sequential glow every 4 seconds if user doesn't click
-let bentoTimer = setInterval(() => {
-  activeBentoIndex = (activeBentoIndex + 1) % bentoCards.length;
-  selectBento(activeBentoIndex);
-}, 4000);
-
-const bentoGrid = document.getElementById('bentoGrid');
-if (bentoGrid) {
-  bentoGrid.addEventListener('mouseenter', () => clearInterval(bentoTimer));
-}
-
-// Simulator Data & Logic
+// 5. 'How It Works': Unified 5-Step Bento & Simulator Flow
 const simStepsData = [
   {
-    badge: "Step 1 of 4",
-    title: "Tell us about your event. We handle the rest.",
+    badge: "Step 1 of 5 · Book Instantly",
+    title: "Select your event format and pick your hours.",
     desc: "Choose between Hourly shoots, Half-Day event packages, or our bespoke Reeload Select experience. Zero equipment stress — creators arrive fully equipped.",
     features: [
       "Latest Apple iPhone 17 Pro & 4K ProRes capture",
       "Professional 3-axis DJI mobile gimbal stabilization",
-      "Verified and trained social-first storytelling creators"
+      "Instant upfront pricing with no hidden charges"
     ]
   },
   {
-    badge: "Step 2 of 4",
-    title: "Instant creator matching in under 60 seconds.",
+    badge: "Step 2 of 5 · Match Creator",
+    title: "Curated creator matching in under 60 seconds.",
     desc: "Our matching engine reviews your event style, date and venue location to assign the highest-rated Reel Maker specialized in your celebration format.",
     features: [
       "Dedicated creator portfolio & client rating preview",
@@ -1087,8 +1125,8 @@ const simStepsData = [
     ]
   },
   {
-    badge: "Step 3 of 4",
-    title: "Live GPS tracking. On-time venue arrival.",
+    badge: "Step 3 of 5 · Pro Shoot",
+    title: "Live GPS tracking & on-time venue arrival.",
     desc: "Track your Reel Maker as they travel to your venue across Bengaluru (Indiranagar, Koramangala, Whitefield, Palace Grounds & beyond).",
     features: [
       "Real-time creator ETA status and contact bridge",
@@ -1097,19 +1135,41 @@ const simStepsData = [
     ]
   },
   {
-    badge: "Step 4 of 4",
-    title: "Same-evening delivery. Ready to share.",
+    badge: "Step 4 of 5 · Edit Fast",
+    title: "Social-first editing, color grading & sound sync.",
+    desc: "Raw 4K footage moves into a rapid color grading and sound design suite, synced to trending Instagram audio with punchy transitions.",
+    features: [
+      "Cinematic Rec.709 & HDR color grading",
+      "Trending Instagram audio licensing and beat matching",
+      "9:16 vertical crop optimized for Instagram & YouTube Shorts"
+    ]
+  },
+  {
+    badge: "Step 5 of 5 · Reeload & Share",
+    title: "Same-evening delivery. Ready to post.",
     desc: "Never wait weeks for event content. While your guests are still reminiscing, you have viral-ready 4K reels uploaded to your phone.",
     features: [
       "Color-graded 4K 9:16 vertical delivery within hours",
-      "Trending Instagram audio integration included",
-      "Direct Google Drive download link with raw archives"
+      "Instant WhatsApp delivery & high-res Google Drive link",
+      "Raw footage archives included with every multi-hour package"
     ]
   }
 ];
 
-function setSimStep(stepIdx) {
-  const data = simStepsData[stepIdx];
+const bentoCards = document.querySelectorAll('.bento-card');
+const bentoDots = document.querySelectorAll('.bento-dot');
+let activeBentoIndex = 0;
+
+let currentSelectedEvent = 'Wedding';
+let currentSelectedPackage = 'Half Day Plan';
+
+function selectBento(idx) {
+  activeBentoIndex = idx;
+  bentoCards.forEach((c, i) => c.classList.toggle('active', i === idx));
+  bentoDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+
+  // Update Left Information Pane
+  const data = simStepsData[idx];
   document.getElementById('simBadge').textContent = data.badge;
   document.getElementById('simTitle').textContent = data.title;
   document.getElementById('simDesc').textContent = data.desc;
@@ -1117,12 +1177,14 @@ function setSimStep(stepIdx) {
   const featureList = document.getElementById('simFeatures');
   featureList.innerHTML = data.features.map(f => `<li><span>✓</span> ${f}</li>`).join('');
 
-  for (let i = 0; i < 4; i++) {
+  // Switch Phone View
+  for (let i = 0; i < 5; i++) {
     const view = document.getElementById(`view${i}`);
-    if (view) view.classList.toggle('active', i === stepIdx);
+    if (view) view.classList.toggle('active', i === idx);
   }
 
-  if (stepIdx === 2) {
+  // Trigger Map Route animation if step 2 (Pro Shoot)
+  if (idx === 2) {
     const route = document.querySelector('.map-route');
     if (route) {
       route.style.animation = 'none';
@@ -1132,12 +1194,56 @@ function setSimStep(stepIdx) {
   }
 }
 
-function setChip(el) {
+// Phone Screen interactions
+function setChip(el, eventType) {
   document.querySelectorAll('.sv-chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
+  currentSelectedEvent = eventType;
 }
 
-// 6. Gallery: Momentum Marquee & Center-Focal Scaling (Spec 4)
+function setPhonePackage(el, packageName, price) {
+  document.querySelectorAll('#view0 .sv-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  currentSelectedPackage = packageName;
+}
+
+function toggleGrade(btn) {
+  document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// 6. Direct Connection from Simulator / Plans / Gallery to the Booking Form
+function bookCurrentPlan() {
+  syncBookingForm(currentSelectedEvent, currentSelectedPackage);
+}
+
+function bookPlan(packageName) {
+  syncBookingForm('Wedding', packageName);
+}
+
+function bookFromModal() {
+  closeLightbox();
+  syncBookingForm(modalTargetEvent || 'Wedding', 'Half Day Plan');
+}
+
+function syncBookingForm(eventType, packageName) {
+  const eventSelect = document.getElementById('formEventType');
+  const packageSelect = document.getElementById('formPackage');
+  const alertToast = document.getElementById('formAlert');
+
+  if (eventType && eventSelect) eventSelect.value = eventType;
+  if (packageName && packageSelect) packageSelect.value = packageName;
+
+  if (alertToast) {
+    alertToast.textContent = `✓ Selected: ${packageName} for ${eventType || 'Celebration'}. Pick your date & venue below!`;
+    alertToast.classList.add('active');
+  }
+
+  const bookSec = document.getElementById('book');
+  if (bookSec) bookSec.scrollIntoView({ behavior: 'smooth' });
+}
+
+// 7. Gallery: Momentum Marquee & Center-Focal Scaling (Spec 4)
 const marqueeTrack = document.getElementById('marqueeTrack');
 const marqueeCards = document.querySelectorAll('.marquee-card');
 const progressBar = document.getElementById('galleryProgressBar');
@@ -1161,7 +1267,6 @@ function updateCenterFocal() {
     }
   });
 
-  // Update progress bar
   if (marqueeTrack && progressBar) {
     const trackWidth = marqueeTrack.scrollWidth;
     const pct = (Math.abs(marqueeOffset) % (trackWidth / 2)) / (trackWidth / 2);
@@ -1195,9 +1300,11 @@ marqueeLoop();
 const modal = document.getElementById('reelModal');
 const modalMedia = document.getElementById('modalMedia');
 const modalTitle = document.getElementById('modalTitle');
+let modalTargetEvent = 'Wedding';
 
-function openLightbox(title) {
+function openLightbox(title, eventType = 'Wedding') {
   if (!modal) return;
+  modalTargetEvent = eventType;
   modalTitle.textContent = title;
   modalMedia.style.backgroundImage = `linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85')`;
   modal.classList.add('active');
@@ -1213,7 +1320,7 @@ if (modal) {
   });
 }
 
-// 7. Testimonials: Staggered Entrance & 3D Hover Tilt (Spec 5)
+// 8. Testimonials: Staggered Entrance & 3D Hover Tilt (Spec 5)
 const testiObserver = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (e.isIntersecting) {
@@ -1229,7 +1336,6 @@ const testiObserver = new IntersectionObserver((entries) => {
 const testiGrid = document.getElementById('testimonialsGrid');
 if (testiGrid) testiObserver.observe(testiGrid);
 
-// 3D Card Hover Tilt logic
 document.querySelectorAll('.testi-card').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
@@ -1245,7 +1351,7 @@ document.querySelectorAll('.testi-card').forEach((card) => {
   });
 });
 
-// 8. Pricing Counters & Tabs
+// 9. Pricing Counters & Tabs
 function animateCounters(root = document){
   root.querySelectorAll('.counter').forEach(el => {
     if(el.dataset.done) return;
@@ -1283,10 +1389,6 @@ document.querySelectorAll('.tab').forEach(tab => {
     if(wedding) animateCounters(document.getElementById('weddingExtra'));
   });
 });
-
-function book(plan){
-  document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
-}
 
 function submitBooking(e){
   e.preventDefault();
